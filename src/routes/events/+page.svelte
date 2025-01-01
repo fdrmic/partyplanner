@@ -48,11 +48,10 @@
 
 <div class="container">
   <div class="intro-text">
-    <h1>Entdecke die besten Events in deiner Stadt!</h1>
+    <h1>Erfasse deinen nächsten Event</h1>
   </div>
   <p class="description">
-    Hier findest du eine Übersicht über alle kommenden Events. Erfasse deine eigenen Events
-    und teile sie mit der Community, um für grossartige Partynächte zu sorgen.
+    Hier kannst du einen deinen nächsten Event erfassen. Klicke auf den Button, um loszulegen.
   </p>
   <button class="button" on:click={navigateToCreateEvent}>Event erfassen</button>
 </div>
