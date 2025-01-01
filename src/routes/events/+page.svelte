@@ -52,7 +52,7 @@
   </div>
   <p class="description">
     Hier findest du eine Übersicht über alle kommenden Events. Erfasse deine eigenen Events
-    und teile sie mit der Community, um für großartige Partynächte zu sorgen.
+    und teile sie mit der Community, um für grossartige Partynächte zu sorgen.
   </p>
   <button class="button" on:click={navigateToCreateEvent}>Event erfassen</button>
 </div>
