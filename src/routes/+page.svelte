@@ -1,5 +1,5 @@
 <script>
-  export let title = "Hello Party People!";
+  let title = "Hello Party People!";
 
   let images = [
     "/image1.jpeg",
@@ -11,7 +11,7 @@
 </script>
 
 <div class="container mt-5">
-  <!-- Begrüßung und Beschreibung -->
+  <!-- Begrüssung / Beschreibung -->
   <div class="intro-text text-center mb-5">
     <h1 class="gradient-text">{title}</h1>
     <p>

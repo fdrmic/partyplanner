@@ -13,7 +13,7 @@ export async function connectDB() {
   return client.db("eventinfo"); // Name der Datenbank
 }
 
-// *** Funktionen für Events ***
+//  Funktionen für Events 
 
 // Alle Events abrufen
 export async function getEvents() {
@@ -143,7 +143,7 @@ export async function findEventsByDJ(djName) {
   }
 }
 
-// *** Funktionen für Clubs ***
+// Funktionen für Clubs 
 
 // Alle Clubs abrufen und nach Städten gruppieren
 export async function getClubsByCity() {
@@ -170,7 +170,7 @@ export async function getClubsByCity() {
   }
 }
 
-// *** Funktionen für Kontakt ***
+// Funktionen für Kontakt 
 
 // Neue Kontaktanfrage speichern
 export async function insertContactData(contactData) {

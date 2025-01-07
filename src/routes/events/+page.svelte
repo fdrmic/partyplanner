@@ -1,10 +1,21 @@
 <script>
-  import { goto } from '$app/navigation';
+  import { goto } from '$app/navigation'; // Navigation zwischen Seiten
 
   function navigateToCreateEvent() {
-    goto('/events/create'); // Navigiert zur Create-Seite
+    goto('/events/create'); // Navigiert zur Create-Seite wenn auf Button geklickt wird
   }
 </script>
+
+<div class="container">
+  <div class="intro-text">
+    <h1>Entdecke die besten Events in deiner Stadt!</h1>
+  </div>
+  <p class="description">
+    Hier findest du eine Übersicht über alle kommenden Events. Erfasse deine eigenen Events
+    und teile sie mit der Community, um für grossartige Partynächte zu sorgen.
+  </p>
+  <button class="button" on:click={navigateToCreateEvent}>Event erfassen</button>
+</div>
 
 <style>
   .container {
@@ -46,13 +57,4 @@
   }
 </style>
 
-<div class="container">
-  <div class="intro-text">
-    <h1>Entdecke die besten Events in deiner Stadt!</h1>
-  </div>
-  <p class="description">
-    Hier findest du eine Übersicht über alle kommenden Events. Erfasse deine eigenen Events
-    und teile sie mit der Community, um für großartige Partynächte zu sorgen.
-  </p>
-  <button class="button" on:click={navigateToCreateEvent}>Event erfassen</button>
-</div>
+

@@ -1,5 +1,5 @@
 <script>
-  export let title = "Kontaktformular";
+  let title = "Kontaktformular";
 </script>
 
 <div class="container mt-5">

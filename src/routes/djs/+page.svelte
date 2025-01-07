@@ -1,11 +1,11 @@
 <script>
-  export let data;
+  export let data; // Daten laden
 
   async function deleteDJ(djName) {
-    const response = await fetch('/api/delete-dj', {
+    const response = await fetch('/api/delete-dj', { //API-Aufruf wird an den Endpunkt /api/delete-dj gesendet
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ djName }),
+      headers: { 'Content-Type': 'application/json' }, // Daten im JSON-Format
+      body: JSON.stringify({ djName }), // djName wird als JSON-Objekt übergeben
     });
 
     if (response.ok) {
@@ -13,11 +13,11 @@
       location.reload(); // Seite neu laden
     } else {
       const { message } = await response.json();
-      alert(`Fehler beim Löschen von DJ ${djName}: ${message}`);
+      alert(`Fehler beim Löschen von DJ ${djName}: ${message}`); // Fehlermeldung anzeigen
     }
   }
 
-  async function updateDJName(oldName, newName) {
+  async function updateDJName(oldName, newName) {//Hier dasselbe wie oben
     const response = await fetch('/api/update-dj', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -39,7 +39,7 @@
     <h1>Alle Djs auf einen Blick</h1>
   </div>
 
-  {#if data.djList && data.djList.length > 0}
+  {#if data.djList && data.djList.length > 0} 
     <div class="table-container">
       <table class="modern-table">
         <thead>

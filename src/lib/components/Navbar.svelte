@@ -1,5 +1,5 @@
 <script>
-  // Logik oder Props können hier später hinzugefügt werden
+  
 </script>
 
 <nav class="navbar navbar-light bg-light border-bottom">
@@ -49,6 +49,6 @@
   }
 
   .nav-link:hover {
-    color: blue; /* Hover-Farbe */
+    color: blue; /* Hoverfarbe */
   }
 </style>

@@ -1,5 +1,5 @@
 <script>
-  export let title = "Event erstellen";
+  let title = "Event erstellen";
 
   import { goto } from '$app/navigation';
 
