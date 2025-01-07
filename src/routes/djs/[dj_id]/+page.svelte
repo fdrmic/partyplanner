@@ -3,7 +3,7 @@
   </script>
   
   <div class="container mt-4">
-    <h1 class="gradient-text text-center">Event-Details für {data.djName}</h1>
+    <h1 class="gradient-text text-center">Event-Details</h1>
   
     <div class="event-details mt-4">
       <p><strong>DJ:</strong> {data.djName}</p>

@@ -57,4 +57,16 @@
   }
 </style>
 
+<<<<<<< HEAD
 
+=======
+<div class="container">
+  <div class="intro-text">
+    <h1>Erfasse deinen nächsten Event</h1>
+  </div>
+  <p class="description">
+    Hier kannst du einen deinen nächsten Event erfassen. Klicke auf den Button, um loszulegen.
+  </p>
+  <button class="button" on:click={navigateToCreateEvent}>Event erfassen</button>
+</div>
+>>>>>>> db3f3496858348efa7775472cb07b9309fffa09d
