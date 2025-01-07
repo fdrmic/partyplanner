@@ -3,7 +3,7 @@
     import { Chart, registerables } from "chart.js";
     Chart.register(...registerables);
 
-    export let data;
+    export let data; //Daten über page.server.js erhalten
 
     let chartInstance;
     let chartCanvas;

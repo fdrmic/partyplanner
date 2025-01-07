@@ -37,9 +37,61 @@
 </div>
 
 <style>
-  .container {
-    margin: 0 auto;
+  /* Text Styling */
+  .intro-text h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: transparent;
+    background: linear-gradient(90deg, #ff00ff, #8000ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+
+  .intro-text p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #333;
+    margin-bottom: 15px;
+  }
+
+  /* Carousel Styling */
+  .carousel-container {
+    margin: 20px auto;
     max-width: 1200px;
-    padding: 20px;
+  }
+
+  .carousel {
+    overflow: hidden;
+    width: 100%;
+    height: 450px;
+    position: relative;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+  }
+
+  .carousel-track {
+    display: flex;
+    gap: 10px;
+    padding-right: 10px;
+    animation: slide 15s linear infinite;
+    margin-top: 25px;
+    margin-bottom: 25px;
+  }
+
+  .carousel img {
+    width: calc(100% / 3 - 10px);
+    flex-shrink: 0;
+    object-fit: cover;
+    border-radius: 5px;
+  }
+
+  /* Animation */
+  @keyframes slide {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(calc(-100% - 10px));
+    }
   }
 </style>

@@ -1,58 +1,23 @@
 <script>
-<<<<<<< HEAD
   export let data; // Daten laden
 
   async function deleteDJ(djName) {
-    const response = await fetch('/api/delete-dj', { //API-Aufruf wird an den Endpunkt /api/delete-dj gesendet
+    const response = await fetch('/api/delete-dj', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' }, // Daten im JSON-Format
-      body: JSON.stringify({ djName }), // djName wird als JSON-Objekt übergeben
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ djName }),
     });
 
     if (response.ok) {
       alert(`DJ ${djName} wurde gelöscht.`);
-      location.reload(); // Seite neu laden
+      location.reload();
     } else {
       const { message } = await response.json();
-      alert(`Fehler beim Löschen von DJ ${djName}: ${message}`); // Fehlermeldung anzeigen
-    }
-  }
-
-  async function updateDJName(oldName, newName) {//Hier dasselbe wie oben
-    const response = await fetch('/api/update-dj', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ oldName, newName }),
-    });
-=======
-  import DjList from '$lib/components/DjList.svelte';
-  export let data;
-
-  async function deleteDJ(djName) {
-    try {
-      const response = await fetch('/api/delete-dj', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ djName }),
-      });
-
-      if (!response.ok) {
-        const { message } = await response.json();
-        alert(`Fehler: ${message}`);
-        return;
-      }
-
-      alert(`DJ ${djName} wurde erfolgreich gelöscht.`);
-      location.reload();
-    } catch (error) {
-      console.error('Fehler beim Löschen des DJs:', error);
-      alert('Ein Fehler ist aufgetreten.');
+      alert(`Fehler beim Löschen von DJ ${djName}: ${message}`);
     }
   }
 
   async function updateDJName(oldName, newName) {
-    if (!newName || oldName === newName) return;
-
     try {
       const response = await fetch('/api/update-dj', {
         method: 'POST',
@@ -60,15 +25,13 @@
         body: JSON.stringify({ oldName, newName }),
       });
 
-      if (!response.ok) {
+      if (response.ok) {
+        alert(`DJ ${oldName} wurde in ${newName} umbenannt.`);
+        location.reload();
+      } else {
         const { message } = await response.json();
-        alert(`Fehler: ${message}`);
-        return;
+        alert(`Fehler beim Aktualisieren von DJ ${oldName}: ${message}`);
       }
->>>>>>> db3f3496858348efa7775472cb07b9309fffa09d
-
-      alert(`DJ ${oldName} wurde in ${newName} umbenannt.`);
-      location.reload();
     } catch (error) {
       console.error('Fehler beim Aktualisieren des DJs:', error);
       alert('Ein Fehler ist aufgetreten.');
@@ -81,7 +44,6 @@
     <h1>Alle DJs auf einen Blick</h1>
   </div>
 
-<<<<<<< HEAD
   {#if data.djList && data.djList.length > 0} 
     <div class="table-container">
       <table class="modern-table">
@@ -115,13 +77,6 @@
   {:else}
     <p class="no-events">Keine kommenden Events gefunden.</p>
   {/if}
-=======
-  <DjList
-    djList={data.djList}
-    deleteDJ={deleteDJ}
-    updateDJName={updateDJName}
-  />
->>>>>>> db3f3496858348efa7775472cb07b9309fffa09d
 </div>
 
 <style>
@@ -129,12 +84,94 @@
     max-width: 900px;
     margin: 0 auto;
     text-align: center;
+    padding-top: 20px;
   }
 
   .intro-text h1 {
     font-size: 2.5rem;
+    font-weight: bold;
     background: linear-gradient(90deg, #ff00ff, #8000ff);
     -webkit-background-clip: text;
     color: transparent;
+    margin-bottom: 30px;
+  }
+
+  .table-container {
+    margin-top: 20px;
+    overflow-x: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .modern-table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 8px;
+    background-color: #ffffff;
+    overflow: hidden;
+  }
+
+  .modern-table thead {
+    background: linear-gradient(90deg, #ff00ff, #8000ff);
+    color: white;
+  }
+
+  .modern-table th,
+  .modern-table td {
+    padding: 15px;
+    text-align: center;
+    border-bottom: 1px solid #eaeaea;
+  }
+
+  .modern-table tbody tr:hover {
+    background-color: #f5f5f5;
+    transition: background-color 0.3s ease;
+  }
+
+  .modern-table tbody tr:last-child td {
+    border-bottom: none;
+  }
+
+  .btn {
+    padding: 8px 12px;
+    margin: 0 5px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+
+  .btn-danger {
+    background-color: #ff6f61;
+    color: white;
+  }
+
+  .btn-danger:hover {
+    background-color: #d9534f;
+  }
+
+  .btn-primary {
+    background-color: #6f86ff;
+    color: white;
+  }
+
+  .btn-primary:hover {
+    background-color: #5a6dcc;
+  }
+
+  .link {
+    color: #6f86ff;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  .link:hover {
+    text-decoration: underline;
+    color: #ff6f61;
+  }
+
+  .no-events {
+    font-size: 1.2rem;
+    color: #666;
+    margin-top: 20px;
   }
 </style>

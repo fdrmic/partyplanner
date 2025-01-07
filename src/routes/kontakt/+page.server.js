@@ -3,7 +3,7 @@ import { insertContactData } from '$lib/db.js';
 export const actions = {
   default: async ({ request }) => {
     try {
-      // Formulardaten auslesen
+      // Eingegebene Formulardaten auslesen
       const formData = await request.formData();
       const contactData = {
         name: formData.get('name'),
